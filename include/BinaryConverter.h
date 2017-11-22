@@ -10,8 +10,6 @@ class BinaryConverter
 public:
     string toBinary(int num);
     int toDecimal(string binary);
-
-private:
     int charToInt(char c);
 };
 
