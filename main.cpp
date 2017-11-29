@@ -32,16 +32,29 @@ void runMenu()
         string binary;
         cout << "Enter binary string: ";
         cin >> binary;
-        int result = bc.toDecimal(binary);
-        cout << "Result = " << result;
+        if(bc.verifyBinary(binary))
+        {
+            int result = bc.toDecimal(binary);
+            cout << "Result = " << result;
+        }
+        else
+            cout << "Not a valid binary string.";
+
     }
     else if(choice == 2)
     {
-        int dec = 0;
+        string str;
         cout << "Enter decimal number: ";
-        cin >> dec;
-        string binary = bc.toBinary(dec);
-        cout << "Result = " << binary;
+        cin >> str;
+        if(bc.verifyDecimal(str))
+        {
+            int dec = bc.strToInt(str);
+            string binary = bc.toBinary(dec);
+            cout << "Result = " << binary;
+        }
+        else
+            cout << "Not a valid decimal number.";
+
     }
     else
     {

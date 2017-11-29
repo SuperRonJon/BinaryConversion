@@ -1,4 +1,5 @@
 #include <cmath>
+#include <sstream>
 
 #include "BinaryConverter.h"
 
@@ -44,4 +45,37 @@ int BinaryConverter::toDecimal(string binary)
 int BinaryConverter::charToInt(char c)
 {
     return c - '0';
+}
+
+int BinaryConverter::strToInt(string s)
+{
+    stringstream ss(s);
+
+    int x = 0;
+    ss >> x;
+    return x;
+}
+
+bool BinaryConverter::verifyBinary(string binary)
+{
+    for(int i = 0; i < binary.size(); i++)
+    {
+        if(binary[i] != '1' && binary[i] != '0')
+            return false;
+    }
+
+    return true;
+}
+
+bool BinaryConverter::verifyDecimal(string dec)
+{
+
+
+    for(int i = 0; i < dec.size(); i++)
+    {
+        if(dec[i] < '0' || dec[i] > '9')
+            return false;
+    }
+
+    return true;
 }
